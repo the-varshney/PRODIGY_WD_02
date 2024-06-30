@@ -1,0 +1,136 @@
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #00ff88;
+}
+
+.card {
+    position: relative;
+    width: 450px;
+    height: 450px;
+    border-radius: 14px;
+    z-index: 1111;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 20px 20px 60px #03eeff, -20px -20px 60px #aaadcf;
+}
+
+.bg {
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    width: 440px;
+    height: 440px;
+    z-index: 2;
+    background: rgba(255, 255, 255, 0.945);
+    backdrop-filter: blur(24px);
+    border-radius: 10px;
+    overflow: hidden;
+    outline: 2px solid rgba(0, 0, 0, 0.541);
+}
+
+.blob {
+    position: absolute;
+    z-index: 1;
+    top: 50%;
+    left: 50%;
+    width: 450px;
+    height: 450px;
+    border-radius: 100%;
+    background-color: #ff0000;
+    opacity: 1;
+    filter: bl(12px);
+    animation: blob-bounce 3500ms infinite ease;
+}
+
+@keyframes blob-bounce {
+    0% {
+        transform: translate(-100%, -100%) translate3d(0, 0, 0);
+    }
+    25% {
+        transform: translate(-100%, -100%) translate3d(100%, 0, 0);
+    }
+    50% {
+        transform: translate(-100%, -100%) translate3d(100%, 100%, 0);
+    }
+    75% {
+        transform: translate(-100%, -100%) translate3d(0, 100%, 0);
+    }
+    100% {
+        transform: translate(-100%, -100%) translate3d(0, 0, 0);
+    }
+}
+
+.content {
+    position: relative;
+    z-index: 3;
+    text-align: center;
+}
+
+#display {
+    font-size: 2em;
+    margin: 20px 0;
+}
+
+.buttons {
+    margin: 20px 0;
+}
+
+button {
+    padding: 10px 20px;
+    margin: 5px;
+    border: none;
+    background: #007BFF;
+    color: rgba(248, 253, 220, 0.849);
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    border: 2px solid black;
+    background: #0056b3;
+    color: #00ff88;
+    border-radius: 5px;
+}
+
+.laps {
+    margin-top: 20px;
+    text-align: left;
+    max-height: 100px; 
+    overflow-y: auto;
+}
+
+.laps ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.laps li {
+    background: #e9ecef;
+    padding: 5px;
+    margin: 5px 0;
+    border-radius: 5px;
+}
+
+.blink {
+    animation: blinker 1s step-start infinite;
+}
+
+@keyframes blinker {
+    0% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 0.7;
+    }
+    100% {
+        opacity: 0;
+    }
+}
